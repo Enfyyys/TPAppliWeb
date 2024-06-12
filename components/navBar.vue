@@ -5,6 +5,7 @@
     <v-btn text :to="{ name: 'index' }">Accueil</v-btn>
     <v-btn text :to="{ name: 'cat' }">Photos de chats</v-btn>
     <v-btn text :to="{ name: 'geolocation' }">Géolocalisation</v-btn>
+    <v-btn text :to="{ name: 'drawcanvas' }">Dessiner</v-btn>
     <v-btn text :to="{ name: 'about' }">À propos</v-btn>
     <v-btn text :to="{ name: 'contact' }">Contact</v-btn>
   </v-app-bar>
