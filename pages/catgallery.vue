@@ -2,11 +2,13 @@
   <div>
     <h1>Mes Photos de Chat</h1>
     <div v-if="catPhotos.length > 0">
-      <div v-for="(photo, index) in catPhotos" :key="index">
-        <img :src="photo" alt="Photo de chat">
-        <v-btn color="error" @click="removeCatPhoto(index)">Supprimer</v-btn>
-        <v-btn color="primary" @click="shareCatPhoto(photo)">Partager</v-btn>
-      </div>
+      <v-row justify="space-around">
+        <v-col v-for="(photo, index) in catPhotos" :key="index" cols="12" sm="6" md="4">
+          <cat :photo="photo"></cat>
+          <v-btn color="error" @click="removeCatPhoto(index)">Supprimer</v-btn>
+          <v-btn color="primary" @click="shareCatPhoto(photo)">Partager</v-btn>
+        </v-col>
+      </v-row>
     </div>
     <div v-else>
       <p>Aucune photo de chat sauvegardée.</p>
@@ -98,8 +100,4 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* Styles spécifiques au composant */
-</style>
 
