@@ -1,4 +1,3 @@
-<!-- Step3.vue -->
 <template>
     <div>
       <v-form @submit.prevent="submitForm">
@@ -32,12 +31,10 @@
     },
     methods: {
       submitForm() {
-        // Validation des champs, par exemple
         if (!this.formData.message) {
           alert('Veuillez remplir tous les champs')
           return
         }
-        // Afficher le faux texte de validation
         this.dialog = true;
       }
     }

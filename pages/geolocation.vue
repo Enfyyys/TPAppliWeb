@@ -98,7 +98,3 @@
   }
   </script>
   
-  <style scoped>
-  /* Styles spécifiques au composant */
-  </style>
-  

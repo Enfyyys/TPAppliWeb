@@ -1,18 +1,14 @@
 <template>
     <div>
-      <!-- Étape 1 -->
       <div v-if="currentStep === 1">
         <Step1 @nextStep="nextStep" />
       </div>
-      <!-- Étape 2 -->
       <div v-else-if="currentStep === 2">
         <Step2 @prevStep="prevStep" @nextStep="nextStep" />
       </div>
-      <!-- Étape 3 -->
       <div v-else-if="currentStep === 3">
         <Step3 @prevStep="prevStep" @submit="submitForm" />
       </div>
-      <!-- Autre -->
       <div v-else>
         <p>Étape inconnue</p>
       </div>
@@ -43,7 +39,7 @@
         this.currentStep--
       },
       submitForm(formData) {
-        // Envoyer le formulaire avec les données
+        // Inutilisé
       }
     }
   }

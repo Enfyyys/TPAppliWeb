@@ -1,4 +1,3 @@
-<!-- Step1.vue -->
 <template>
     <div>
       <v-form @submit.prevent="validateStep">
@@ -21,7 +20,6 @@
     },
     methods: {
       validateStep() {
-        // Validation des champs, par exemple
         if (!this.formData.name || !this.formData.email) {
           alert('Veuillez remplir tous les champs')
           return

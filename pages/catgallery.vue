@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Mes Photos de Chat</h1>
+    <v-btn color="primary" @click="fetchAndStoreCatPhoto">Ajouter une photo de chat</v-btn>
     <div v-if="catPhotos.length > 0">
       <v-row justify="space-around">
         <v-col v-for="(photo, index) in catPhotos" :key="index" cols="12" sm="6" md="4">
@@ -13,7 +14,7 @@
     <div v-else>
       <p>Aucune photo de chat sauvegardée.</p>
     </div>
-    <v-btn color="primary" @click="fetchAndStoreCatPhoto">Ajouter une photo de chat</v-btn>
+    
 
     <v-snackbar v-model="snackbar" :timeout="snackbarTimeout" color="success">
       {{ snackbarMessage }}
