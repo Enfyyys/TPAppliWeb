@@ -1,32 +1,29 @@
 <template>
-    <div>
-      <v-form @submit.prevent="validateStep">
-        <v-text-field v-model="formData.name" label="Nom"></v-text-field>
-        <v-text-field v-model="formData.email" label="Email"></v-text-field>
-        <v-btn type="submit">Suivant</v-btn>
-      </v-form>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        formData: {
-          name: '',
-          email: ''
-        }
+  <div>
+    <v-form @submit.prevent="validateStep">
+      <v-text-field v-model="localFormData.name" label="Nom"></v-text-field>
+      <v-text-field v-model="localFormData.email" label="Email"></v-text-field>
+      <v-btn type="submit">Suivant</v-btn>
+    </v-form>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['formData'],
+  data() {
+    return {
+      localFormData: { ...this.formData }
+    }
+  },
+  methods: {
+    validateStep() {
+      if (!this.localFormData.name || !this.localFormData.email) {
+        alert('Veuillez remplir tous les champs')
+        return
       }
-    },
-    methods: {
-      validateStep() {
-        if (!this.formData.name || !this.formData.email) {
-          alert('Veuillez remplir tous les champs')
-          return
-        }
-        this.$emit('nextStep', this.formData)
-      }
+      this.$emit('nextStep', this.localFormData)
     }
   }
-  </script>
-  
+}
+</script>
